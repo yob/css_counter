@@ -24,5 +24,5 @@ PLATFORMS
 
 DEPENDENCIES
   css_counter!
-  rake
+  rake (~> 10.0)
   rspec (~> 2.0)
