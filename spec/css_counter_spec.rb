@@ -23,5 +23,12 @@ describe CssCounter do
 
       it { should == 3 }
     end
+
+    context "with multiple.css" do
+      let!(:input) { File.read(File.dirname(__FILE__) + "/fixtures/multiple.css") }
+      subject { CssCounter.count(input) }
+
+      it { should == 2 }
+    end
   end
 end

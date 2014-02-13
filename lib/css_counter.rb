@@ -10,6 +10,8 @@ class CssCounter
     tree = Crass.parse(input)
     selector_count = tree.select { |item|
       item[:node] == :style_rule
-    }.size
+    }.map { |item|
+      item[:selector][:value].split(",")
+    }.flatten.size
   end
 end
