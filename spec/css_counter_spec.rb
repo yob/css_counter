@@ -37,5 +37,14 @@ describe CssCounter do
 
       it { should == 2 }
     end
+
+    context "with mediaquery.css" do
+      let!(:input) { File.read(File.dirname(__FILE__) + "/fixtures/tc-application.css") }
+      subject { CssCounter.count(input) }
+
+      # TODO blesscss reports this file has 4467 selectors. Who is correct?
+      #it { should == 4467 }
+      it { should == 4326 }
+    end
   end
 end
