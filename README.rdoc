@@ -19,3 +19,11 @@ selector limit imposed by Internet Explorer 9 and lower.
   CssCounter.new(css).selectors
   => 2
 
+== Rails
+
+To ensure none of the compiled CSS files in your rails app exceed the IE selector limit,
+there's a rake task you can run as part of a build process.
+
+Add css_counter to your application Gemfile, and then run:
+
+    bundle exec rake css_counter:check_selectors

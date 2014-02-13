@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "css_counter"
-  s.version           = "0.0.1"
+  s.version           = "0.0.2"
   s.summary           = "a (very) small library that counts selectors in a CSS file"
   s.description       = "a (very) small library that counts selectors in a CSS file"
   s.author            = "James Healy"
