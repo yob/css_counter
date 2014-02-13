@@ -7,6 +7,9 @@ class CssCounter
   end
 
   def count(input)
-    1
+    tree = Crass.parse(input)
+    selector_count = tree.select { |item|
+      item[:node] == :style_rule
+    }.size
   end
 end
