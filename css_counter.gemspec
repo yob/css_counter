@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.has_rdoc          = true
   s.rdoc_options      << "--title" << "CSS Counter" << "--line-numbers"
   s.test_files        = [ "spec/css_counter_spec.rb" ]
-  s.files             = [ "lib/css_counter.rb", "CHANGELOG","MIT-LICENSE", "README.rdoc" ]
+  s.files             = [ "lib/css_counter.rb", "lib/css_counter/railtie.rb", "lib/css_counter/css_counter.rake", "CHANGELOG","MIT-LICENSE", "README.rdoc" ]
   s.license           = "MIT"
 
   s.add_development_dependency("rake", "~> 10.0")

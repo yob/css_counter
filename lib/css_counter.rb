@@ -1,4 +1,5 @@
 require 'crass'
+require 'css_counter/railtie' if defined?(Rails)
 
 class CssCounter
 
