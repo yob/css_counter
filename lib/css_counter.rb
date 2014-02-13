@@ -1,5 +1,4 @@
 require 'crass'
-require 'ir_b'
 
 class CssCounter
 
