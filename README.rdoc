@@ -1,0 +1,21 @@
+A (very) small library that counts selectors in a CSS file.
+
+This is mainly useful to detect when your CSS files have crossed the 4095
+selector limit imposed by Internet Explorer 9 and lower.
+
+= Installation
+
+  gem install css_counter
+
+= Usage
+
+  require 'css_counter'
+
+  css = <<-EOS
+    h1 { color: red }
+    h2 { color: green }
+  EOS
+
+  CssCounter.new(css).selectors
+  => 2
+
