@@ -41,7 +41,7 @@ class CssCounter
     startpos = item[:block][:tokens][1][:pos]
     endpos   = item[:block][:tokens][-2][:pos]
     local_css = @css[startpos, endpos-startpos]
-    count_selectors_in_css_string(local_css)
+    count_selectors_in_css_string(local_css) + 1
   end
 
 end
