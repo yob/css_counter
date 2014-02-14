@@ -15,24 +15,32 @@ class CssCounter
 
   def count_selectors_in_css_string(string)
     tree = Crass.parse(string)
-    selector_count = tree.select { |item|
-      item[:node] == :style_rule
-    }.map { |item|
-      item[:selector][:value].split(",")
-    }.flatten.size
-    media_queries = tree.select { |item|
-      item[:node] == :at_rule && item[:name] == "media"
+    tree.map { |item|
+      count_selectors_in_node(item)
+    }.inject(0) { |accum, i|
+      accum += i
     }
-    media_queries.each do |mq|
-      selector_count += count_selectors_in_mq(string, mq)
-    end
-    selector_count
   end
 
-  def count_selectors_in_mq(css, mq)
-    startpos = mq[:block][:tokens][1][:pos]
-    endpos   = mq[:block][:tokens][-2][:pos]
-    local_css = css[startpos, endpos-startpos]
+  def count_selectors_in_node(item)
+    case item[:node]
+    when :style_rule then count_selectors_in_style_rule(item)
+    when :at_rule    then count_selectors_in_at_rule(item)
+    else
+      0
+    end
+  end
+
+  def count_selectors_in_style_rule(item)
+    item[:selector][:value].split(",").size
+  end
+
+  def count_selectors_in_at_rule(item)
+    return 0 unless item[:name] == "media"
+
+    startpos = item[:block][:tokens][1][:pos]
+    endpos   = item[:block][:tokens][-2][:pos]
+    local_css = @css[startpos, endpos-startpos]
     count_selectors_in_css_string(local_css)
   end
 
