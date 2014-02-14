@@ -38,7 +38,7 @@ describe CssCounter do
       it { should == 3 }
     end
 
-    context "with mediaquery.css" do
+    context "with tc-application.css" do
       let!(:input) { File.read(File.dirname(__FILE__) + "/fixtures/tc-application.css") }
       subject { CssCounter.new(input).selectors }
 
