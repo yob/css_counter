@@ -1,3 +1,6 @@
+v0.0.3 (14th February 2013)
+* improve counting of some CSS3 selectors
+
 v0.0.2 (14th February 2013)
 * added a rake task for checking the CSS selector count from rails
 
