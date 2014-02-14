@@ -1,0 +1,21 @@
+h1 { color: red; }
+
+@-webkit-keyframes showNavSidebar {
+  0%   { -webkit-transform: translate3D(-100%, 0, 0); }
+  100% { -webkit-transform: translate3D(0, 0, 0); }
+}
+
+@-moz-keyframes showNavSidebar {
+  0% { -moz-transform: translate3D(-100%, 0, 0); }
+  100% { -moz-transform: translate3D(0, 0, 0); } 
+}
+
+@-o-keyframes showNavSidebar {
+  0% { -o-transform: translate3D(-100%, 0, 0); }
+  100% { -o-transform: translate3D(0, 0, 0); }
+}
+
+@keyframes showNavSidebar {
+  0% { transform: translate3D(-100%, 0, 0); }
+  100% { transform: translate3D(0, 0, 0); }
+}

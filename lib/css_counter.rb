@@ -43,6 +43,8 @@ class CssCounter
       count_selectors_in_css_string(local_css) + 1
     elsif item[:name] == "font-face"
       1
+    elsif item[:name] =~ /keyframes\Z/
+      item[:block][:value].select { |item| item[:node] == :percentage }.size
     else
       0
     end
