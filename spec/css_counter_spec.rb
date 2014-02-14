@@ -38,6 +38,13 @@ describe CssCounter do
       it { should == 3 }
     end
 
+    context "with charset.css" do
+      let!(:input) { File.read(File.dirname(__FILE__) + "/fixtures/charset.css") }
+      subject { CssCounter.new(input).selectors }
+
+      it { should == 1 }
+    end
+
     context "with tc-application.css" do
       let!(:input) { File.read(File.dirname(__FILE__) + "/fixtures/tc-application.css") }
       subject { CssCounter.new(input).selectors }
