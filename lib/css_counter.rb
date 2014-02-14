@@ -36,12 +36,16 @@ class CssCounter
   end
 
   def count_selectors_in_at_rule(item)
-    return 0 unless item[:name] == "media"
-
-    startpos = item[:block][:tokens][1][:pos]
-    endpos   = item[:block][:tokens][-2][:pos]
-    local_css = @css[startpos, endpos-startpos]
-    count_selectors_in_css_string(local_css) + 1
+    if item[:name] == "media"
+      startpos = item[:block][:tokens][1][:pos]
+      endpos   = item[:block][:tokens][-2][:pos]
+      local_css = @css[startpos, endpos-startpos]
+      count_selectors_in_css_string(local_css) + 1
+    elsif item[:name] == "font-face"
+      1
+    else
+      0
+    end
   end
 
 end

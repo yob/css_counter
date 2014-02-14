@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "TCFont-Regular";
+  src: url(/assets/tcfont-regular.eot);
+  src: url("/assets/tcfont-regular.eot?#iefix") format("embedded-opentype"), url(/assets/tcfont-regular.woff) format("woff"), url(/assets/tcfont-regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 { color: red; }

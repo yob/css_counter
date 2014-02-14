@@ -45,13 +45,20 @@ describe CssCounter do
       it { should == 1 }
     end
 
+    context "with font-face.css" do
+      let!(:input) { File.read(File.dirname(__FILE__) + "/fixtures/font-face.css") }
+      subject { CssCounter.new(input).selectors }
+
+      it { should == 2 }
+    end
+
     context "with tc-application.css" do
       let!(:input) { File.read(File.dirname(__FILE__) + "/fixtures/tc-application.css") }
       subject { CssCounter.new(input).selectors }
 
       # TODO blesscss reports this file has 4467 selectors. Who is correct?
       #it { should == 4467 }
-      it { should == 4391 }
+      it { should == 4397 }
     end
   end
 end
