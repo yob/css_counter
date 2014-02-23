@@ -1,3 +1,6 @@
+v0.1.0 (24th February 2013)
+* improve logging output from the rake task
+
 v0.0.3 (14th February 2013)
 * improve counting of some CSS3 selectors
 
