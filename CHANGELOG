@@ -1,14 +1,14 @@
 v0.2.0 (23rd April 2015)
 * Support sprockets 2.x and 3.x
 
-v0.1.0 (24th February 2013)
+v0.1.0 (24th February 2014)
 * improve logging output from the rake task
 
-v0.0.3 (14th February 2013)
+v0.0.3 (14th February 2014)
 * improve counting of some CSS3 selectors
 
-v0.0.2 (14th February 2013)
+v0.0.2 (14th February 2014)
 * added a rake task for checking the CSS selector count from rails
 
-v0.0.1 (14th February 2013)
+v0.0.1 (14th February 2014)
 * initial release
