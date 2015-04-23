@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    css_counter (0.0.2)
+    css_counter (0.2.0)
       crass (~> 0.2)
 
 GEM
