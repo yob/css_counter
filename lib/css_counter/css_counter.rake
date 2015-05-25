@@ -13,13 +13,15 @@ namespace :css_counter do
     }
     exit_non_zero = false
     css_paths.each do |path|
-      css = sprockets[path].source
-      selector_count = CssCounter.new(css).selectors
-      if selector_count > IE_SELECTOR_LIMIT
-        $stderr.puts "#{path} has #{selector_count} CSS selectors, must not exceed #{IE_SELECTOR_LIMIT}"
-        exit_non_zero = true
-      else
-        puts "#{path} has #{selector_count} CSS selectors"
+      css = sprockets[path]
+      if css
+        selector_count = CssCounter.new(css.source).selectors
+        if selector_count > IE_SELECTOR_LIMIT
+          $stderr.puts "#{path} has #{selector_count} CSS selectors, must not exceed #{IE_SELECTOR_LIMIT}"
+          exit_non_zero = true
+        else
+          puts "#{path} has #{selector_count} CSS selectors"
+        end
       end
     end
 
