@@ -1,3 +1,6 @@
+v0.2.1 (25th May 2015)
+* Skip missing CSS files without an exception
+
 v0.2.0 (23rd April 2015)
 * Support sprockets 2.x and 3.x
 
